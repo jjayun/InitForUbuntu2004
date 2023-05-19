@@ -112,8 +112,7 @@ sudo vi /etc/netplan/01-network-manager-all.yaml
     <img src="assets/netplan.png", style="width:400px;height:200px">
 </p>
 
-```sudo vi /etc/ssh/sshd_config```
-- Modify ```sshd_config``` to the following.
+- Modify ```/etc/ssh/sshd_config``` to the following.
 ```
 TCPKeepAlive yes
 ClientAliveInterval 60
