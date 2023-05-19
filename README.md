@@ -109,7 +109,7 @@ ifconfig -a
 sudo vi /etc/netplan/01-network-manager-all.yaml
 ```
 <p align="left">
-    <img src="assets/netplan.jpg", style="width:400px;height:200px">
+    <img src="assets/netplan.png", style="width:400px;height:200px">
 </p>
 
 ```sudo vi /etc/ssh/sshd_config```
