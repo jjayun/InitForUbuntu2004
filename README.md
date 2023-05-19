@@ -1,5 +1,4 @@
-# InitforUbuntu2004
-Initial Setting for Ubuntu 20.04
+# SetUpforMyUbuntu2004
 ```
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install build-essential curl git wget vim tmux -y
