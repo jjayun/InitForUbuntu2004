@@ -1,4 +1,4 @@
-# SetUpforMyUbuntu2004
+# SetUpMyUbuntu2004
 ```
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install build-essential curl git wget vim tmux -y
