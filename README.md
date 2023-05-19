@@ -82,6 +82,59 @@ libcudnn_cnn_train.so.x -> libcudnn_cnn_train.so.x.x.x</br>
 libcudnn_cnn_infer.so.x -> libcudnn_cnn_infer.so.x.x.x</br>
 </br>
 
+## Docker & Nvidia-docker
+### Docker
+1. Install Required Packages.
+```
+sudo apt-get update
+sudo apt-get install ca-certificates gnupg lsb-release -y
+```
+2. Add a repo.
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+3. Install Docker,containerd.
+```
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo docker version
+```
+4. Start Docker.
+```
+sudo systemctl enable docker
+sudo systemctl start docker
+
+sudo systemctl enable containerd
+sudo systemctl start containerd
+```
+5. Authorization
+```
+sudo usermod -aG docker $USER
+sudo service docker restart
+```
+6. Reboot
+</br>
+
+### Nvidia-docker
+1. Add GPG key, repo.
+```
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add - \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+```
+2. Install Nvidia-docker2
+```
+sudo apt-get update
+sudo apt-get install nvidia-docker2 -y
+sudo systemctl restart docker
+```
+3. Verify operation.
+```docker run --rm --gpus all ubuntu:18.04 nvidia-smi```
+
+
 ## Others
 ### Chrome
 ```
@@ -198,6 +251,7 @@ InitialPreference=7
 MimeType=application/vnd.hancom.asv;application/vnd.hancom.bak;application/x-trash;application/vnd.hancom.owpml;application/vnd.hancom.hwp;application/vnd.hancom.hwt;application/vnd.hancom.hml;application/vnd.hancom.hwpx;application/vnd.hancom.hwtx;application/x-hwp;application/x-hwt;application/msword;application/vnd.openxmlformats-officedocument.wordprocessingml.document;
 ```
 3. Reboot
+</br>
 
 ### 프린터 자동추가 멈추기
 ```
@@ -205,6 +259,7 @@ sudo systemctl stop cups-browsed
 sudo systemctl disable cups-browsed
 reboot now
 ```
+</br>
 
 ### 미러사이트 바꾸기
 ```
