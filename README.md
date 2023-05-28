@@ -133,7 +133,7 @@ sudo systemctl restart docker
 ```
 3. Verify operation.
 ```docker run --rm --gpus all ubuntu:18.04 nvidia-smi```
-
+</br>
 
 ## Others
 ### Chrome
