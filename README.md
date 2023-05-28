@@ -13,8 +13,8 @@ sudo apt-get install zsh -y
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
-2. Install Font. <a href="https://github.com/ryanoasis/nerd-fonts">official doc</a>
-3. Install Powerlevel10k theme. <a href="https://github.com/romkatv/powerlevel10k">official doc</a>
+2. Install Font: <a href="https://github.com/ryanoasis/nerd-fonts">official doc</a>
+3. Install Powerlevel10k theme: <a href="https://github.com/romkatv/powerlevel10k">official doc</a>
 4. Set the plugins. ```plugins=(zsh-syntax-highlighting zsh-autosuggestions zsh-completions)```
 ```
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -25,8 +25,7 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 
 ## GPU Setting
 ### Graphic driver
-1. Deactivate nouveau</br>
-```sudo vi /etc/modprobe.d/blacklist.conf```
+1. Deactivate nouveau: ```sudo vi /etc/modprobe.d/blacklist.conf```
 - Add the following to the bottom.</br>
 ```blacklist nouveau```</br>
 ```options nouveau modeset=0```
@@ -39,19 +38,18 @@ sudo apt-get install nvidia-driver-xxx
 </br>
 
 ### CUDA
-1. Remove existing CUDA.</br>
-```sudo rm -rf /usr/local/cuda*```
+1. Remove existing CUDA: ```sudo rm -rf /usr/local/cuda*```
 2. Install Compatible CUDA __runfile__ at <a href="https://developer.nvidia.com/cuda-toolkit-archive">here</a>.
 3. Add the following to PATH.</br>
 ```export PATH=$PATH:/usr/local/cuda-xx.x/bin```</br>
 ```export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-xx.x/lib64```</br>
 ```export CUDADIR=/usr/local/cuda-xx.x```</br>
-4. Check the version. ```nvcc -V```
+4. Check the version: ```nvcc -V```
 5. Reboot</br>
 </br>
 
 ### CUDNN
-1. Install Compatible CUDNN __Tar__ at <a href="https://developer.nvidia.com/cudnn">here</a>.
+1. Install Compatible CUDNN: <a href="https://developer.nvidia.com/cudnn">here</a>.
 2. Unzip the Tar and Rearrange the directories.
 ```
 sudo cp include/cudnn* /usr/local/cuda/include
@@ -136,6 +134,14 @@ sudo systemctl restart docker
 </br>
 
 ## Others
+### Miniconda3
+1. Download a Miniconda3 sh script: ```wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh```
+2. ```bash Miniconda3-latest-Linux-x86_64.sh```
+3. Set default PATH (yes)
+4. ```source ~/.zshrc```
+5. ```conda config --set auto_activate_base false```
+```
+
 ### Chrome
 ```
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -177,7 +183,7 @@ ClientAliveInterval 60
 </br>
 
 ### VSCode
-- Install VSCode deb file at <a href="https://code.visualstudio.com">here</a>
+- Install VSCode deb file: <a href="https://code.visualstudio.com">here</a>
 </br>
 
 ### Sublime Text 3
@@ -229,12 +235,11 @@ wine BANDIZIP-SETUP.EXE
 </br>
 
 ### VLC
-```sudo snap isntall vlc```
+```sudo snap install vlc```
 </br>
 
 ### Hoffice 2020
-1. Install Hoffice 2020 deb file.</br>
-<a href="https://dkuniv-my.sharepoint.com/:u:/g/personal/72210292_dankook_ac_kr/EdpK_MHRGWdApW2_21j0UdYB1_KnVeW_jWHnVBuW3F8L5g?e=Cr4IjP">here</a></br>
+1. Install Hoffice 2020 deb file: <a href="https://dkuniv-my.sharepoint.com/:u:/g/personal/72210292_dankook_ac_kr/EdpK_MHRGWdApW2_21j0UdYB1_KnVeW_jWHnVBuW3F8L5g?e=Cr4IjP">here</a></br>
 2. Paste the following into ```/usr/share/applications/hoffice11-hwp.desktop```.
 ```
 [Desktop Entry]
