@@ -24,7 +24,7 @@ git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zs
 </br>
 
 ## GPU Setting
-### Graphic driver
+### 1. Graphic driver
 1. Deactivate nouveau: ```sudo vi /etc/modprobe.d/blacklist.conf```
 - Add the following to the bottom.</br>
 ```blacklist nouveau```</br>
@@ -37,7 +37,7 @@ sudo apt-get install nvidia-driver-xxx
 ```
 </br>
 
-### CUDA
+### 2. CUDA
 1. Remove existing CUDA: ```sudo rm -rf /usr/local/cuda*```
 2. Install Compatible CUDA __runfile__ at <a href="https://developer.nvidia.com/cuda-toolkit-archive">here</a>.
 3. Add the following to PATH.</br>
@@ -48,7 +48,7 @@ sudo apt-get install nvidia-driver-xxx
 5. Reboot</br>
 </br>
 
-### CUDNN
+### 3. CUDNN
 1. Install Compatible CUDNN: <a href="https://developer.nvidia.com/cudnn">here</a>.
 2. Unzip the Tar and Rearrange the directories.
 ```
@@ -70,7 +70,8 @@ sudo ldconfig
 cd
 ldconfig -N -v $(sed 's/:/ /' <<< $LD_LIBRARY_PATH) 2>/dev/null | grep libcudnn
 ```
-4. Check the following and Reboot.</br>
+4. Check the following and Reboot.
+```
 libcudnn_adv_train.so.x -> libcudnn_adv_train.so.x.x.x</br>
 libcudnn_adv_infer.so.x -> libcudnn_adv_infer.so.x.x.x</br>
 libcudnn_ops_infer.so.x -> libcudnn_ops_infer.so.x.x.x</br>
@@ -78,10 +79,11 @@ libcudnn.so.x -> libcudnn.so.x.x.x</br>
 libcudnn_ops_train.so.x -> libcudnn_ops_train.so.x.x.x</br>
 libcudnn_cnn_train.so.x -> libcudnn_cnn_train.so.x.x.x</br>
 libcudnn_cnn_infer.so.x -> libcudnn_cnn_infer.so.x.x.x</br>
+```
 </br>
 
 ## Docker & Nvidia-docker
-### Docker
+### 1. Docker
 1. Install Required Packages.
 ```
 sudo apt-get update
@@ -116,7 +118,7 @@ sudo service docker restart
 6. Reboot
 </br>
 
-### Nvidia-docker
+### 2. Nvidia-docker
 1. Add GPG key, repo.
 ```
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
@@ -134,15 +136,15 @@ sudo systemctl restart docker
 </br>
 
 ## Others
-### Miniconda3
+### 1. Miniconda3
 1. Download a Miniconda3 sh script: ```wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh```
 2. ```bash Miniconda3-latest-Linux-x86_64.sh```
 3. Set default PATH (yes)
 4. ```source ~/.zshrc```
 5. ```conda config --set auto_activate_base false```
-```
+</br>
 
-### Chrome
+### 2. Chrome
 ```
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
@@ -152,7 +154,7 @@ sudo rm -rf /etc/apt/sources.list.d/google.list
 ```
 </br>
 
-### SSH
+### 3. SSH
 ```
 sudo apt-get update
 sudo apt-get install openssh-server ssh net-tools -y
