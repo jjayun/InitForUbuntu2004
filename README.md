@@ -238,7 +238,7 @@ wine BANDIZIP-SETUP.EXE
 
 ### VLC
 ```sudo snap install vlc```
-</br>
+</br></br>
 
 ### Hoffice 2020
 1. Install Hoffice 2020 deb file: <a href="https://dkuniv-my.sharepoint.com/:u:/g/personal/72210292_dankook_ac_kr/EdpK_MHRGWdApW2_21j0UdYB1_KnVeW_jWHnVBuW3F8L5g?e=Cr4IjP">here</a></br>
